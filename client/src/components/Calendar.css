@@ -40,18 +40,18 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(99, 102, 241, 0.05);
-    border: 1px solid rgba(99, 102, 241, 0.1);
+    background: rgba(113, 178, 128, 0.05);
+    border: 1px solid rgba(113, 178, 128, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent-purple);
+    color: var(--accent-emerald);
     transition: all 0.3s ease;
 }
 
 .cal-nav-btn:hover {
-    background: var(--accent-purple);
-    color: #FFFFFF;
+    background: var(--accent-emerald);
+    color: var(--bg-primary);
 }
 
 .cal-today-btn {
@@ -59,9 +59,9 @@
     margin: 0 auto 24px;
     padding: 8px 20px;
     border-radius: 50px;
-    background: rgba(99, 102, 241, 0.08);
-    border: 1px solid rgba(99, 102, 241, 0.15);
-    color: var(--accent-purple);
+    background: rgba(113, 178, 128, 0.08);
+    border: 1px solid rgba(113, 178, 128, 0.15);
+    color: var(--accent-emerald);
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -83,33 +83,33 @@
     font-weight: 700;
     color: var(--text-muted);
     text-transform: uppercase;
-    background: #FFFFFF;
+    background: var(--bg-secondary);
 }
 
 .calendar-cell {
-    background: #FFFFFF;
+    background: var(--bg-tertiary);
     aspect-ratio: 1/1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     cursor: pointer;
     transition: all 0.2s ease;
     gap: 2px;
 }
 
 .calendar-cell:not(.empty):hover {
-    background: rgba(99, 102, 241, 0.05);
-    color: var(--accent-purple);
+    background: rgba(113, 178, 128, 0.1);
+    color: var(--accent-gold);
 }
 
 .calendar-cell.today {
-    background: rgba(99, 102, 241, 0.05);
-    color: var(--accent-purple);
+    background: rgba(113, 178, 128, 0.05);
+    color: var(--accent-gold);
     font-weight: 700;
-    border: 2px solid var(--accent-purple);
+    border: 2px solid var(--accent-gold);
 }
 
 .calendar-cell.has-minutes {
@@ -185,7 +185,7 @@
     display: block;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--accent-purple);
+    color: var(--accent-emerald);
 }
 
 .stat-label {
@@ -220,14 +220,16 @@
 .log-form input {
     padding: 12px 16px;
     border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 
 .log-form input:focus {
-    border-color: var(--accent-purple);
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
 }
 
 .form-actions {
@@ -237,7 +239,7 @@
 
 .btn-save {
     flex: 1;
-    background: var(--accent-purple);
+    background: var(--accent-teal);
     color: #FFFFFF;
     padding: 12px;
     border-radius: 12px;
@@ -275,8 +277,8 @@
 }
 
 .today-dot {
-    border: 2px solid var(--accent-purple);
-    background: rgba(99, 102, 241, 0.05);
+    border: 2px solid var(--accent-gold);
+    background: rgba(113, 178, 128, 0.05);
 }
 
 .activity-dot {

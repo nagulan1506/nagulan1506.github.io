@@ -27,20 +27,20 @@
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.12);
-    border-color: rgba(99, 102, 241, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-gold);
 }
 
 /* Project Display (Top Half) */
 .project-display {
     height: 240px;
-    background: #FFFFFF;
+    background: var(--bg-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     position: relative;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(113, 178, 128, 0.1);
 }
 
 .project-image-box {
@@ -87,7 +87,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--accent-purple);
+    color: var(--accent-emerald);
     margin-bottom: 12px;
     display: block;
 }
@@ -116,18 +116,18 @@
 
 .tech-pill {
     padding: 6px 14px;
-    background: rgba(99, 102, 241, 0.05);
-    border: 1px solid rgba(99, 102, 241, 0.1);
+    background: rgba(113, 178, 128, 0.05);
+    border: 1px solid rgba(113, 178, 128, 0.1);
     border-radius: 50px;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--accent-purple);
+    color: var(--accent-emerald);
     transition: all 0.3s ease;
 }
 
 .tech-pill:hover {
-    background: var(--accent-purple);
-    color: #FFFFFF;
+    background: var(--accent-emerald);
+    color: var(--bg-primary);
 }
 
 /* Action Row */
@@ -152,7 +152,7 @@
 }
 
 .btn-text:hover {
-    color: var(--accent-purple);
+    color: var(--accent-gold);
 }
 
 .btn-text svg {
@@ -170,14 +170,15 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: #111827;
+    background: var(--accent-teal);
     color: #FFFFFF;
     transition: all 0.3s ease;
 }
 
 .project-github-link:hover {
     transform: scale(1.1);
-    background: var(--accent-purple);
+    background: var(--accent-gold);
+    color: #000;
 }
 
 /* Expandable Body */
@@ -212,7 +213,7 @@
 
 .project-feature-list li::before {
     content: '→';
-    color: var(--accent-purple);
+    color: var(--accent-gold);
     font-weight: 700;
 }
 

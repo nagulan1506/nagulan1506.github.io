@@ -1,7 +1,7 @@
 /* ========== PREMIUM CONTACT SECTION ========== */
 .contact-premium {
     padding: 140px 0;
-    background: #FFFFFF;
+    background: var(--bg-primary);
     position: relative;
 }
 
@@ -58,7 +58,7 @@
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 2px;
-    color: var(--accent-purple);
+    color: var(--accent-gold);
     margin-bottom: 4px;
 }
 
@@ -71,10 +71,10 @@
 
 /* Form Side */
 .contact-premium-form-box {
-    background: #F9FAFB;
+    background: var(--bg-secondary);
     padding: 60px;
     border-radius: 40px;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(113, 178, 128, 0.1);
 }
 
 .premium-form {
@@ -130,14 +130,14 @@
 .premium-field textarea:not(:placeholder-shown)~label {
     top: -12px;
     font-size: 0.75rem;
-    color: var(--accent-purple);
+    color: var(--accent-gold);
     font-weight: 800;
     letter-spacing: 1px;
 }
 
 .premium-field input:focus,
 .premium-field textarea:focus {
-    border-color: var(--accent-purple);
+    border-color: var(--accent-gold);
 }
 
 .premium-submit {
@@ -146,7 +146,7 @@
     justify-content: center;
     gap: 12px;
     padding: 20px 40px;
-    background: #111827;
+    background: var(--accent-teal);
     color: #FFFFFF;
     border-radius: 16px;
     font-size: 1.1rem;
@@ -158,9 +158,10 @@
 }
 
 .premium-submit:hover {
-    background: var(--accent-purple);
+    background: var(--accent-gold);
+    color: #000;
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
 }
 
 .premium-submit svg {
