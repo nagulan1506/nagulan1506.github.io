@@ -137,8 +137,82 @@
 .hero-content {
     position: relative;
     z-index: 1;
-    text-align: center;
     animation: fadeInUp 1s ease-out;
+}
+
+.hero-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+/* Profile Photo */
+.hero-photo-wrapper {
+    position: relative;
+    flex-shrink: 0;
+    animation: fadeInRight 1s ease-out 0.5s both;
+}
+
+.hero-photo-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.2), rgba(123, 47, 247, 0.1), transparent);
+    filter: blur(40px);
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.hero-photo-ring {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite, float 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+.hero-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 4px solid var(--bg-primary);
+}
+
+.hero-photo-accent {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.hero-photo-accent::after {
+    content: '⚡';
+    font-size: 1.4rem;
 }
 
 .hero-badge {
@@ -195,7 +269,7 @@
 .hero-title-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 4px;
     margin-bottom: 24px;
     min-height: 48px;
@@ -218,7 +292,7 @@
 
 .hero-description {
     max-width: 600px;
-    margin: 0 auto 40px;
+    margin: 0 0 40px;
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-secondary);
@@ -228,7 +302,7 @@
 .hero-cta {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 16px;
     margin-bottom: 48px;
     animation: fadeInUp 0.8s ease-out 0.7s both;
@@ -239,9 +313,9 @@
 .hero-socials {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 16px;
-    margin-bottom: 60px;
+    margin-bottom: 0;
     animation: fadeInUp 0.8s ease-out 0.8s both;
 }
 
@@ -316,6 +390,44 @@
 }
 
 /* Responsive */
+@media (max-width: 968px) {
+    .hero-main {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-title-wrapper {
+        justify-content: center;
+    }
+
+    .hero-description {
+        margin: 0 auto 32px;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-socials {
+        justify-content: center;
+    }
+
+    .hero-photo-ring {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-photo-glow {
+        width: 280px;
+        height: 280px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         padding-top: 60px;
@@ -323,7 +435,6 @@
 
     .hero-description {
         font-size: 0.95rem;
-        margin-bottom: 32px;
     }
 
     .hero-cta {
@@ -336,6 +447,16 @@
         width: 100%;
         max-width: 280px;
         justify-content: center;
+    }
+
+    .hero-photo-ring {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-photo-glow {
+        width: 240px;
+        height: 240px;
     }
 
     .hero-orb-1 {
