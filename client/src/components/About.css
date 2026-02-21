@@ -142,9 +142,9 @@
     align-items: flex-start;
     gap: 20px;
     padding: 20px;
-    background: rgba(99, 102, 241, 0.03);
+    background: rgba(113, 178, 128, 0.03);
     border-radius: 20px;
-    border: 1px solid rgba(99, 102, 241, 0.05);
+    border: 1px solid rgba(113, 178, 128, 0.05);
 }
 
 .trait-icon {
@@ -181,7 +181,7 @@
     font-family: 'Sacramento', cursive;
     font-size: 3.5rem;
     font-weight: 400;
-    color: var(--text-primary);
+    color: var(--accent-gold);
     line-height: 1;
     margin-bottom: -5px;
 }

@@ -38,9 +38,9 @@
 
 .hobby-card:hover {
     transform: translateY(-10px);
-    background: #FFFFFF;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-    border-color: var(--accent-purple);
+    background: rgba(113, 178, 128, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-emerald);
 }
 
 .hobby-icon-wrapper {
@@ -60,7 +60,7 @@
 
 .hobby-card:hover .hobby-icon-wrapper {
     transform: scale(1.1) rotate(5deg);
-    background: var(--accent-purple);
+    background: var(--accent-emerald);
     color: #FFFFFF;
 }
 
@@ -88,7 +88,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--accent-emerald) 0%, transparent 70%);
     opacity: 0;
     transition: opacity 0.5s ease;
     z-index: 0;
@@ -104,8 +104,8 @@
 
 .hobby-card[class*="animating-"] {
     pointer-events: none;
-    border-color: var(--accent-purple);
-    background: #FFFFFF;
+    border-color: var(--accent-emerald);
+    background: rgba(113, 178, 128, 0.05);
 }
 
 /* 1. NCC Drill (Snap & Salute) */
