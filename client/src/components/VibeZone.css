@@ -1,8 +1,8 @@
 /* ========== VIBE DUAL GRID ========== */
 .vibe-dual-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
     align-items: stretch;
     opacity: 0;
     transform: translateY(40px);
@@ -17,17 +17,20 @@
 }
 
 .vibe-game-card {
-    padding: 24px;
+    padding: 30px;
     background: var(--bg-secondary);
     border: 1px solid rgba(113, 178, 128, 0.1);
     display: flex;
     flex-direction: column;
-    height: 480px;
-    /* STRICT FIXED HEIGHT */
-    max-width: 400px;
+    align-items: center;
+    /* CENTER CONTENT */
+    height: 520px;
+    /* INCREASED HEIGHT */
+    max-width: 420px;
     width: 100%;
     margin: 0 auto;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .vibe-game-card:hover {
@@ -35,12 +38,12 @@
 }
 
 .game-card-header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
-    height: 40px;
-    /* FIXED HEADER HEIGHT */
+    height: 32px;
 }
 
 .game-title {
@@ -57,16 +60,17 @@
     color: var(--accent-gold);
 }
 
-/* GRIDS */
+/* GRIDS - FIXED SIZE FOR CONSISTENCY */
 .memory-grid,
 .sliding-grid {
     display: grid;
     gap: 12px;
-    flex: 1;
-    margin: 0 auto 24px auto;
-    width: 100%;
-    max-height: 300px;
-    aspect-ratio: 1 / 1;
+    width: 280px;
+    /* FIXED WIDTH */
+    height: 280px;
+    /* FIXED HEIGHT */
+    margin: 0 auto 32px auto;
+    /* MORE BOTTOM MARGIN */
 }
 
 .memory-grid {
@@ -79,7 +83,8 @@
 
 .memory-card,
 .sliding-tile {
-    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
     perspective: 1000px;
 }
@@ -148,7 +153,9 @@
 }
 
 .reset-btn-small {
-    padding: 12px 20px;
+    width: 100%;
+    /* FULL WIDTH FOR BETTER LOOK */
+    padding: 14px 20px;
     background: var(--bg-tertiary);
     color: var(--accent-emerald);
     border: 1px solid rgba(113, 178, 128, 0.2);
@@ -158,12 +165,7 @@
     transition: all 0.3s ease;
     cursor: pointer;
     margin-top: auto;
-}
-
-.reset-btn-small:hover {
-    background: var(--accent-emerald);
-    color: var(--bg-primary);
-    transform: translateY(-2px);
+    /* PUSHES TO BOTTOM */
 }
 
 @media (max-width: 1024px) {
