@@ -19,7 +19,7 @@ const Projects = () => {
                 'Scalable MongoDB architecture for high performance'
             ],
             tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-            image: '/nocry-nobroker.png',
+            image: 'nocry-nobroker.png',
             icon: '🏠',
             github: 'https://github.com/nagulan1506/real-estate-app',
         },
@@ -35,7 +35,7 @@ const Projects = () => {
                 'Professional admin dashboard for city management'
             ],
             tech: ['React', 'Node.js', 'Express', 'Payments'],
-            image: '/parking-logo.png',
+            image: 'parking-logo.png',
             icon: '🅿️',
             github: 'https://github.com/nagulan1506',
         },
