@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import './Calendar.css';
 
@@ -7,6 +7,18 @@ const Calendar = () => {
     const today = new Date();
     const [currentMonth, setCurrentMonth] = useState(today.getMonth());
     const [currentYear, setCurrentYear] = useState(today.getFullYear());
+
+    // Minutes logging state
+    const [loggedMinutes, setLoggedMinutes] = useState(() => {
+        const saved = localStorage.getItem('portfolio_calendar_minutes');
+        return saved ? JSON.parse(saved) : {};
+    });
+    const [editingDay, setEditingDay] = useState(null);
+    const [minutesInput, setMinutesInput] = useState('');
+
+    useEffect(() => {
+        localStorage.setItem('portfolio_calendar_minutes', JSON.stringify(loggedMinutes));
+    }, [loggedMinutes]);
 
     const monthNames = [
         'January', 'February', 'March', 'April', 'May', 'June',
@@ -47,6 +59,26 @@ const Calendar = () => {
         setCurrentYear(today.getFullYear());
     };
 
+    const handleDayClick = (day) => {
+        const dateKey = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        setEditingDay(dateKey);
+        setMinutesInput(loggedMinutes[dateKey] || '');
+    };
+
+    const saveMinutes = (e) => {
+        e.preventDefault();
+        if (editingDay) {
+            const newLogs = { ...loggedMinutes };
+            if (minutesInput === '' || isNaN(minutesInput)) {
+                delete newLogs[editingDay];
+            } else {
+                newLogs[editingDay] = parseInt(minutesInput);
+            }
+            setLoggedMinutes(newLogs);
+            setEditingDay(null);
+        }
+    };
+
     const daysInMonth = getDaysInMonth(currentMonth, currentYear);
     const firstDay = getFirstDayOfMonth(currentMonth, currentYear);
     const monthKey = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}`;
@@ -62,20 +94,25 @@ const Calendar = () => {
         cells.push(<div key={`empty-${i}`} className="calendar-cell empty"></div>);
     }
     for (let day = 1; day <= daysInMonth; day++) {
+        const dateKey = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const minutes = loggedMinutes[dateKey];
+
         cells.push(
             <div
                 key={day}
-                className={`calendar-cell ${isToday(day) ? 'today' : ''}`}
+                className={`calendar-cell ${isToday(day) ? 'today' : ''} ${minutes ? 'has-minutes' : ''}`}
+                onClick={() => handleDayClick(day)}
             >
-                {day}
+                <span className="cell-day">{day}</span>
+                {minutes && <span className="cell-minutes">{minutes}m</span>}
             </div>
         );
     }
 
     return (
         <section className="calendar section" id="calendar">
-            <h2 className="section-title">My Calendar</h2>
-            <p className="section-subtitle">Stay up to date with my availability</p>
+            <h2 className="section-title">Productivity Tracker</h2>
+            <p className="section-subtitle">Log your daily coding/learning minutes and track your consistency.</p>
 
             <div
                 ref={ref}
@@ -119,23 +156,56 @@ const Calendar = () => {
                 </div>
 
                 <div className="calendar-info glass-card">
-                    <h3 className="cal-info-title">Availability</h3>
-                    <div className="cal-status">
-                        <span className="cal-status-dot available"></span>
-                        Open for opportunities
-                    </div>
-                    <p className="cal-info-text">
-                        I'm currently available for freelance projects, full-time roles,
-                        and collaboration opportunities. Feel free to reach out!
-                    </p>
+                    <h3 className="cal-info-title">Daily Minutes Log</h3>
+
+                    {editingDay ? (
+                        <form className="log-form" onSubmit={saveMinutes}>
+                            <p className="log-date">Logging for: <strong>{editingDay}</strong></p>
+                            <div className="form-group">
+                                <label>Minutes Spent</label>
+                                <input
+                                    type="number"
+                                    autoFocus
+                                    value={minutesInput}
+                                    onChange={(e) => setMinutesInput(e.target.value)}
+                                    placeholder="e.g. 120"
+                                />
+                            </div>
+                            <div className="form-actions">
+                                <button type="submit" className="btn-save">Save</button>
+                                <button type="button" className="btn-cancel" onClick={() => setEditingDay(null)}>Cancel</button>
+                            </div>
+                        </form>
+                    ) : (
+                        <>
+                            <div className="cal-status">
+                                <span className="cal-status-dot available"></span>
+                                Track your progress
+                            </div>
+                            <p className="cal-info-text">
+                                Click on any date in the calendar to log the time you've spent coding or learning. Your data is saved locally to help you stay motivated!
+                            </p>
+                            <div className="cal-stats-summary">
+                                <div className="stat-item">
+                                    <span className="stat-value">{Object.values(loggedMinutes).reduce((a, b) => a + b, 0)}</span>
+                                    <span className="stat-label">Total Minutes</span>
+                                </div>
+                                <div className="stat-item">
+                                    <span className="stat-value">{Object.keys(loggedMinutes).length}</span>
+                                    <span className="stat-label">Days Tracked</span>
+                                </div>
+                            </div>
+                        </>
+                    )}
+
                     <div className="cal-legend">
                         <div className="cal-legend-item">
                             <span className="cal-legend-dot today-dot"></span>
                             Today
                         </div>
                         <div className="cal-legend-item">
-                            <span className="cal-legend-dot milestone-dot"></span>
-                            Milestone
+                            <span className="cal-legend-dot activity-dot"></span>
+                            Activity
                         </div>
                     </div>
                 </div>
