@@ -1,7 +1,7 @@
 /* ========== PREMIUM SKILLS SECTION ========== */
 .skills-premium {
     padding: 120px 0;
-    background: #F9FAFB;
+    background: var(--bg-primary);
     position: relative;
     z-index: 1;
 }
@@ -14,8 +14,8 @@
 .premium-badge {
     display: inline-block;
     padding: 6px 16px;
-    background: rgba(99, 102, 241, 0.08);
-    color: var(--accent-purple);
+    background: rgba(113, 178, 128, 0.08);
+    color: var(--accent-gold);
     font-size: 0.8rem;
     font-weight: 800;
     border-radius: 50px;
@@ -108,7 +108,7 @@
 .skill-icon-box {
     width: 56px;
     height: 56px;
-    background: #F3F4F6;
+    background: var(--bg-tertiary);
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -118,8 +118,8 @@
 }
 
 .premium-skill-card:hover .skill-icon-box {
-    background: #FFFFFF;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    background: var(--bg-secondary);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transform: rotate(-5deg);
 }
 

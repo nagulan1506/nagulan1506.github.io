@@ -1,7 +1,7 @@
 /* ========== PREMIUM HOBBIES SECTION ========== */
 .hobbies {
     padding: 120px 0;
-    background: #FFFFFF;
+    background: var(--bg-primary);
     position: relative;
     overflow: hidden;
 }
@@ -21,12 +21,12 @@
 }
 
 .hobby-card {
-    background: #F9FAFB;
+    background: var(--bg-secondary);
     padding: 40px 32px;
     border-radius: 32px;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(113, 178, 128, 0.1);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
@@ -46,13 +46,13 @@
 .hobby-icon-wrapper {
     width: 80px;
     height: 80px;
-    background: #FFFFFF;
+    background: var(--bg-tertiary);
     border-radius: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.4s ease;
     position: relative;
     z-index: 2;

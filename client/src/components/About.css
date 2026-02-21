@@ -1,7 +1,7 @@
 /* ========== PREMIUM ABOUT SECTION ========== */
 .about {
     padding: 120px 0;
-    background: #FFFFFF;
+    background: var(--bg-primary);
     position: relative;
     overflow: hidden;
 }
@@ -37,8 +37,8 @@
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: var(--accent-purple);
-    background: rgba(99, 102, 241, 0.08);
+    color: var(--accent-gold);
+    background: rgba(113, 178, 128, 0.08);
     padding: 6px 16px;
     border-radius: 50px;
 }
@@ -60,21 +60,21 @@
 }
 
 .bento-stat-card {
-    background: #F9FAFB;
+    background: var(--bg-secondary);
     padding: 24px;
     border-radius: 24px;
     display: flex;
     align-items: center;
     gap: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(113, 178, 128, 0.1);
     transition: all 0.4s ease;
 }
 
 .bento-stat-card:hover {
     transform: translateY(-5px);
-    background: #FFFFFF;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
-    border-color: var(--accent-purple);
+    background: var(--bg-tertiary);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-gold);
 }
 
 .bento-stat-icon {
@@ -151,12 +151,13 @@
     font-size: 1.5rem;
     width: 48px;
     height: 48px;
-    background: #FFFFFF;
+    background: var(--bg-tertiary);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: var(--accent-emerald);
 }
 
 .trait-info h4 {
@@ -189,7 +190,7 @@
 .sig-sub {
     font-size: 0.9rem;
     font-weight: 700;
-    color: var(--accent-purple);
+    color: var(--accent-emerald);
     text-transform: uppercase;
     letter-spacing: 2px;
 }

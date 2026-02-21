@@ -51,7 +51,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
             <div className="navbar-container container">
                 <a className="navbar-logo" onClick={() => scrollToSection('home')}>
-                    <img src="/logo.png" alt="NS Logo" className="navbar-logo-img" />
+                    <img src="/ns-logo.png" alt="NS Logo" className="navbar-logo-img" />
                 </a>
 
                 <div className={`navbar-links ${menuOpen ? 'active' : ''}`}>

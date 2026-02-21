@@ -1,7 +1,7 @@
 /* ========== CHESS GAME SECTION ========== */
 .chess-section {
     padding: 120px 0;
-    background: #F9FAFB;
+    background: var(--bg-primary);
 }
 
 .chess-grid {
@@ -22,10 +22,10 @@
 /* Board Side */
 .chess-board-container {
     padding: 20px;
-    background: #FFFFFF;
+    background: var(--bg-secondary);
     border-radius: 32px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(113, 178, 128, 0.1);
 }
 
 .status-banner {
@@ -77,9 +77,10 @@
 /* Controls Side */
 .chess-stats-card {
     padding: 40px;
-    background: #FFFFFF;
+    background: var(--bg-secondary);
     border-radius: 32px;
     height: 100%;
+    border: 1px solid rgba(113, 178, 128, 0.1);
 }
 
 .chess-stats-card h3 {
@@ -90,7 +91,7 @@
 }
 
 .move-history {
-    background: #F9FAFB;
+    background: var(--bg-tertiary);
     padding: 24px;
     border-radius: 20px;
     margin-bottom: 30px;
@@ -115,8 +116,8 @@
 
 .move-tag {
     padding: 4px 10px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: var(--bg-secondary);
+    border: 1px solid rgba(113, 178, 128, 0.1);
     border-radius: 6px;
     font-family: monospace;
     font-weight: 700;
@@ -139,8 +140,8 @@
 }
 
 .game-badge.white {
-    background: rgba(99, 102, 241, 0.1);
-    color: var(--accent-purple);
+    background: rgba(113, 178, 128, 0.08);
+    color: var(--accent-gold);
 }
 
 .game-badge.black {
@@ -165,9 +166,10 @@
 }
 
 .reset-btn:hover {
-    background: var(--accent-purple);
+    background: var(--accent-gold);
+    color: #000;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
 }
 
 @media (max-width: 1024px) {
