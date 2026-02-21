@@ -1,0 +1,116 @@
+/* ========== PREMIUM HOBBIES SECTION ========== */
+.hobbies {
+    padding: 120px 0;
+    background: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hobbies-grid.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hobby-card {
+    background: #F9FAFB;
+    padding: 40px 32px;
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.hobby-card:hover {
+    transform: translateY(-10px);
+    background: #FFFFFF;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border-color: var(--accent-purple);
+}
+
+.hobby-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.hobby-card:hover .hobby-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    background: var(--accent-purple);
+    color: #FFFFFF;
+}
+
+.hobby-info {
+    position: relative;
+    z-index: 1;
+}
+
+.hobby-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.hobby-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.hobby-card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(60px);
+}
+
+.hobby-card:hover .hobby-card-glow {
+    opacity: 0.05;
+}
+
+@media (max-width: 1024px) {
+    .hobbies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hobby-card {
+        padding: 32px 24px;
+    }
+}
