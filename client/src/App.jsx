@@ -5,8 +5,10 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Education from './components/Education';
+import Calendar from './components/Calendar';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import TechDoodles from './components/TechDoodles';
 import './App.css';
 
 function App() {
@@ -26,12 +28,14 @@ function App() {
 
   return (
     <div className="app">
+      <TechDoodles />
       <Navbar />
       <Hero />
       <About />
       <Skills />
       <Projects />
       <Education />
+      <Calendar />
       <Contact />
       <Footer />
 
