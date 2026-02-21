@@ -8,7 +8,7 @@ const About = () => {
         { number: '2+', label: 'Featured Projects', icon: '🚀' },
         { number: '8+', label: 'Tech Stack', icon: '💻' },
         { number: 'GUVI', label: 'Certified', icon: '🎓' },
-        { number: ' तमिलनाडु', label: 'Location', icon: '📍' },
+        { number: 'சென்னை', label: 'Location', icon: '📍' },
     ];
 
     return (
