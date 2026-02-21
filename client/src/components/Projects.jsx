@@ -37,6 +37,7 @@ const Projects = () => {
             tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Payment Gateway'],
             gradient: 'linear-gradient(135deg, #7b2ff7, #ff2d95)',
             icon: '🅿️',
+            image: '/parking-logo.png',
             github: 'https://github.com/nagulan1506',
         },
     ];
@@ -56,7 +57,13 @@ const Projects = () => {
                         >
                             <div className="project-card-header" style={{ background: project.gradient }}>
                                 <div className="project-header-overlay">
-                                    <span className="project-icon">{project.icon}</span>
+                                    {project.image ? (
+                                        <div className="project-logo-container">
+                                            <img src={project.image} alt={`${project.title} Logo`} className="project-logo-img" />
+                                        </div>
+                                    ) : (
+                                        <span className="project-icon">{project.icon}</span>
+                                    )}
                                     <div className="project-period">{project.period}</div>
                                 </div>
                             </div>

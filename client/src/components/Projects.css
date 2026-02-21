@@ -10,61 +10,88 @@
     transition: all var(--transition-normal);
 }
 
-.project-header {
-    padding: 32px;
-    background: var(--gradient-primary);
+.project-card-header {
+    height: 180px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.project-header::before {
-    content: '';
+.project-header-overlay {
     position: absolute;
-    top: -50%;
-    right: -50%;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
-}
-
-.project-header h3 {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    margin-bottom: 8px;
-    position: relative;
+    height: 1000%;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     z-index: 1;
 }
 
-.project-type {
+.project-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.project-logo-container {
+    width: 100px;
+    height: 100px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 15px;
+}
+
+.project-logo-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.project-period {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
-    position: relative;
-    z-index: 1;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
 }
 
-.project-body {
+.project-card-body {
     padding: 28px;
+}
+
+.project-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
 }
 
 .project-description {
     font-size: 0.95rem;
     line-height: 1.7;
     color: var(--text-secondary);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
-.project-tech {
+.project-tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .tech-badge {
     padding: 4px 12px;
-    background: rgba(99, 102, 241, 0.06);
+    background: rgba(99, 102, 241, 0.08);
     border: 1px solid rgba(99, 102, 241, 0.15);
     border-radius: 50px;
     font-size: 0.75rem;
@@ -79,91 +106,77 @@
     background: none;
     color: var(--accent-purple);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     padding: 0;
     transition: all var(--transition-normal);
 }
 
 .project-toggle:hover {
     color: var(--accent-blue);
-    gap: 12px;
 }
 
-.project-toggle svg {
-    transition: transform var(--transition-normal);
+.toggle-icon {
+    transition: transform 0.3s ease;
 }
 
-.project-toggle.expanded svg {
+.toggle-icon.rotated {
     transform: rotate(180deg);
 }
 
 .project-details {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.4s ease-out;
 }
 
-.project-details.expanded {
+.project-details.open {
     max-height: 500px;
+    margin-top: 20px;
 }
 
-.project-features {
-    padding: 20px 28px 28px;
-    border-top: 1px solid var(--glass-border);
-}
-
-.project-features h4 {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 12px;
-}
-
-.feature-list {
+.details-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
+    padding-top: 10px;
 }
 
-.feature-list li {
+.details-list li {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
     font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.5;
 }
 
-.feature-list li::before {
-    content: '▸';
-    color: var(--accent-purple);
-    font-weight: bold;
+.details-list li svg {
     flex-shrink: 0;
     margin-top: 2px;
 }
 
 .project-links {
+    margin-top: 32px;
     display: flex;
-    gap: 12px;
-    padding: 0 28px 28px;
+    gap: 16px;
 }
 
 .project-link {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.8rem;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 0.9rem;
     font-weight: 600;
     transition: all var(--transition-normal);
-    background: rgba(99, 102, 241, 0.06);
+    background: rgba(99, 102, 241, 0.08);
     border: 1px solid rgba(99, 102, 241, 0.15);
     color: var(--accent-purple);
 }
 
 .project-link:hover {
-    background: rgba(99, 102, 241, 0.12);
+    background: rgba(99, 102, 241, 0.15);
     transform: translateY(-2px);
 }
 
