@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import logo from '../assets/ns-logo.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -51,7 +52,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
             <div className="navbar-container container">
                 <a className="navbar-logo" onClick={() => scrollToSection('home')}>
-                    <img src="/ns-logo.png" alt="NS Logo" className="navbar-logo-img" />
+                    <img src={logo} alt="NS Logo" className="navbar-logo-img" />
                 </a>
 
                 <div className={`navbar-links ${menuOpen ? 'active' : ''}`}>
