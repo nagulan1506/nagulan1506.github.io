@@ -15,7 +15,7 @@ const Footer = () => {
                     <div className="footer-main-row">
                         <div className="footer-brand-side">
                             <h2 className="footer-brand-title" onClick={() => scrollToSection('home')}>
-                                Nagulan<span className="dot">.</span>
+                                Nagulan Saravanan
                             </h2>
                             <p className="footer-brand-desc">
                                 Specializing in high-end MERN Stack development. <br />

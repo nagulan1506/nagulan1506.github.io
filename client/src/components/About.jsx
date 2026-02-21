@@ -46,13 +46,13 @@ const About = () => {
                             <h3 className="story-heading">Beyond the Code</h3>
                             <p className="story-text">
                                 Highly disciplined and goal-oriented Software Developer with a unique perspective.
-                                My background in **UPSC preparation** isn't just a history—it's my foundation
+                                My background in UPSC preparation isn't just a history—it's my foundation
                                 for deep analytical thinking, unwavering consistency, and the ability to thrive
                                 under intense pressure.
                             </p>
                             <p className="story-text">
-                                I don't just "build apps"—I architect solutions that balance **performance,
-                                logic, and aesthetic beauty**. My specialization in the MERN stack is fueled
+                                I don't just "build apps"—I architect solutions that balance performance,
+                                logic, and aesthetic beauty. My specialization in the MERN stack is fueled
                                 by a passion for turning complex problems into intuitive digital experiences.
                             </p>
                         </div>
@@ -75,7 +75,7 @@ const About = () => {
                         </div>
 
                         <div className="about-signature">
-                            <span className="sig-text">Nagulan S.</span>
+                            <span className="sig-text">Nagulan Saravanan</span>
                             <span className="sig-sub">MERN Stack Developer</span>
                         </div>
                     </div>

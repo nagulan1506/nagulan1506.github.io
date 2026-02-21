@@ -178,11 +178,12 @@
 }
 
 .sig-text {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-family: 'Sacramento', cursive;
+    font-size: 3.5rem;
+    font-weight: 400;
     color: var(--text-primary);
-    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: -5px;
 }
 
 .sig-sub {

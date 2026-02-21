@@ -21,11 +21,12 @@
 }
 
 .footer-brand-title {
+    font-family: 'Sacramento', cursive;
     font-size: 3rem;
-    font-weight: 800;
+    font-weight: 400;
     margin-bottom: 24px;
     cursor: pointer;
-    letter-spacing: -2px;
+    line-height: 1;
 }
 
 .footer-brand-title .dot {
