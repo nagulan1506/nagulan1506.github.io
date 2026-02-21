@@ -49,17 +49,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
             <div className="navbar-container container">
                 <a className="navbar-logo" onClick={() => scrollToSection('home')}>
-                    <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="64" height="64" rx="16" fill="#F9FAFB" />
-                        <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="url(#navGrad)" strokeWidth="2" />
-                        <defs>
-                            <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#6366F1" />
-                                <stop offset="100%" stopColor="#3B82F6" />
-                            </linearGradient>
-                        </defs>
-                        <text x="32" y="44" textAnchor="middle" fontFamily="'Segoe UI','Helvetica',Arial,sans-serif" fontSize="30" fontWeight="700" fill="url(#navGrad)">NS</text>
-                    </svg>
+                    <img src="/logo.png" alt="NS Logo" className="navbar-logo-img" />
                 </a>
 
                 <div className={`navbar-links ${menuOpen ? 'active' : ''}`}>
