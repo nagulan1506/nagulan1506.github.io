@@ -164,8 +164,7 @@ const ChessGame = () => {
                         </div>
                         <div className="board-wrapper-medium">
                             <Chessboard
-                                id="ZenChess"
-                                position={fen}
+                                position={game.fen()}
                                 onPieceDrop={onDrop}
                                 boardWidth={320}
                                 boardOrientation="white"
