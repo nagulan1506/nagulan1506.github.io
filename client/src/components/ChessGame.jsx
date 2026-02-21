@@ -8,32 +8,29 @@ const ChessGame = () => {
     const [ref, isVisible] = useScrollAnimation();
 
     // --- CHESS LOGIC ---
-    const gameRef = useRef(new Chess());
-    const [fen, setFen] = useState(gameRef.current.fen());
+    const [game, setGame] = useState(new Chess());
     const [moveHistory, setMoveHistory] = useState([]);
     const [status, setStatus] = useState('Your turn');
 
     function makeAMove(move) {
         try {
-            const game = gameRef.current;
-            const result = game.move(move);
+            const newGame = new Chess(game.fen());
+            const result = newGame.move(move);
             if (result) {
-                setFen(game.fen());
+                setGame(newGame);
                 setMoveHistory(prev => [...prev, result.san]);
                 return result;
             }
         } catch (e) {
             console.error("Move error:", e);
-            return null;
         }
         return null;
     }
 
     function makeRandomMove() {
-        const game = gameRef.current;
         const possibleMoves = game.moves();
         if (game.isGameOver() || game.isDraw() || possibleMoves.length === 0) {
-            updateStatus();
+            updateStatus(game);
             return;
         }
         const randomIndex = Math.floor(Math.random() * possibleMoves.length);
@@ -54,26 +51,24 @@ const ChessGame = () => {
         return true;
     }
 
-    function updateStatus() {
-        const game = gameRef.current;
-        if (game.isCheckmate()) {
-            setStatus(`Checkmate! ${game.turn() === 'w' ? 'Computer' : 'You'} won!`);
-        } else if (game.isDraw()) {
+    function updateStatus(gameInstance) {
+        if (gameInstance.isCheckmate()) {
+            setStatus(`Checkmate! ${gameInstance.turn() === 'w' ? 'Black' : 'White'} won!`);
+        } else if (gameInstance.isDraw()) {
             setStatus('Draw!');
-        } else if (game.isCheck()) {
+        } else if (gameInstance.isCheck()) {
             setStatus('Check!');
         } else {
-            setStatus(game.turn() === 'w' ? 'Your turn' : 'Thinking...');
+            setStatus(gameInstance.turn() === 'w' ? 'Your turn' : 'Thinking...');
         }
     }
 
     useEffect(() => {
-        updateStatus();
-    }, [fen]);
+        updateStatus(game);
+    }, [game]);
 
     function resetGame() {
-        gameRef.current = new Chess();
-        setFen(gameRef.current.fen());
+        setGame(new Chess());
         setMoveHistory([]);
         setStatus('Your turn');
     }
