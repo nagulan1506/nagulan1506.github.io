@@ -64,7 +64,7 @@ const Hero = () => {
 
                         <h1 className="hero-name">
                             <span className="hero-greeting">Hello, I'm</span>
-                            <span className="hero-name-text">Nagulan S</span>
+                            <span className="hero-name-text">NAGULAN SARAVANAN</span>
                         </h1>
 
                         <div className="hero-title-wrapper">
@@ -119,7 +119,7 @@ const Hero = () => {
                     <div className="hero-photo-wrapper">
                         <div className="hero-photo-glow"></div>
                         <div className="hero-photo-ring">
-                            <img src="/profile.jpg" alt="Nagulan S" className="hero-photo" />
+                            <img src="/profile.jpg" alt="NAGULAN SARAVANAN" className="hero-photo" />
                         </div>
                         <div className="hero-photo-accent"></div>
                     </div>

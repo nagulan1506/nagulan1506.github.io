@@ -57,7 +57,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© {currentYear} Nagulan S. All rights reserved.</p>
+                    <p>© {currentYear} NAGULAN SARAVANAN. All rights reserved.</p>
                     <p className="footer-credit">
                         Built with <span className="heart">❤️</span> using MERN Stack
                     </p>
