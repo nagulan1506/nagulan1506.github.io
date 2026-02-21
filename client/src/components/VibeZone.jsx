@@ -1,6 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { Chess } from 'chess.js';
-import { Chessboard } from 'react-chessboard';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import './VibeZone.css';
 
