@@ -9,8 +9,8 @@ const Projects = () => {
     const projects = [
         {
             id: 1,
-            title: 'Real Estate App',
-            subtitle: 'MERN Stack Platform',
+            title: 'NoCry NoBroker',
+            subtitle: 'Real Estate Platform',
             description: 'A premium property management platform with real-time listings, advanced filtering, and secure user authentication.',
             details: [
                 'Full-stack development with React and Node.js',
@@ -19,15 +19,15 @@ const Projects = () => {
                 'Scalable MongoDB architecture for high performance'
             ],
             tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-            image: null,
+            image: '/nocry-nobroker.png',
             icon: '🏠',
             github: 'https://github.com/nagulan1506/real-estate-app',
         },
         {
             id: 2,
             title: 'namma PARK',
-            subtitle: 'Smart Parking Solution',
-            description: 'Intelligent city parking management system featuring real-time slot tracking and integrated mobile payments.',
+            subtitle: 'My Startup | Smart Parking',
+            description: 'My entrepreneurial venture - an intelligent city parking management system featuring real-time slot tracking and integrated mobile payments.',
             details: [
                 'Real-time slot availability tracking system',
                 'Seamless payment gateway integration',
