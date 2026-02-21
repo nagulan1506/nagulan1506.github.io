@@ -35,10 +35,29 @@
     color: var(--text-primary);
 }
 
-.navbar-logo-img {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
+.text-logo {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.text-logo::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    right: -8px;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-gold);
+    border-radius: 50%;
 }
 
 .navbar-links {

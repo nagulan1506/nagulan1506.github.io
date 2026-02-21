@@ -52,7 +52,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
             <div className="navbar-container container">
                 <a className="navbar-logo" onClick={() => scrollToSection('home')}>
-                    <img src={logo} alt="NS Logo" className="navbar-logo-img" />
+                    <span className="text-logo">NS</span>
                 </a>
 
                 <div className={`navbar-links ${menuOpen ? 'active' : ''}`}>
