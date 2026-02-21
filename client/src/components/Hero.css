@@ -209,7 +209,8 @@
 .kural-card:hover {
     background: rgba(113, 178, 128, 0.08);
     border-color: var(--accent-gold);
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
 }
 
 .kural-content {
