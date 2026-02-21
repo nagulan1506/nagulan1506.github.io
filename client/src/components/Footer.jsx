@@ -28,16 +28,14 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        <div className="footer-links-side">
-                            <div className="footer-links-group">
-                                <h3>Navigation</h3>
-                                <ul>
-                                    <li><a onClick={() => scrollToSection('about')}>About</a></li>
-                                    <li><a onClick={() => scrollToSection('skills')}>Expertise</a></li>
-                                    <li><a onClick={() => scrollToSection('projects')}>Work</a></li>
-                                    <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
-                                </ul>
-                            </div>
+                        <div className="footer-links-row">
+                            <ul className="footer-nav-links">
+                                <li><a onClick={() => scrollToSection('about')}>About</a></li>
+                                <li><a onClick={() => scrollToSection('skills')}>Expertise</a></li>
+                                <li><a onClick={() => scrollToSection('lifestyle')}>Lifestyle</a></li>
+                                <li><a onClick={() => scrollToSection('projects')}>Work</a></li>
+                                <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
+                            </ul>
                         </div>
                     </div>
 
