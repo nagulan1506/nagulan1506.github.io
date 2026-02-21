@@ -10,6 +10,7 @@ import Calendar from './components/Calendar';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TechDoodles from './components/TechDoodles';
+import ChessGame from './components/ChessGame';
 import GeminiAssistant from './components/GeminiAssistant';
 import './App.css';
 
@@ -38,6 +39,7 @@ function App() {
       <Hobbies />
       <Projects />
       <Education />
+      <ChessGame />
       <Calendar />
       <Contact />
       <Footer />
