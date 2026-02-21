@@ -21,7 +21,7 @@ const Projects = () => {
             tech: ['React', 'Node.js', 'MongoDB', 'Express'],
             image: null,
             icon: '🏠',
-            github: 'https://github.com/nagulan1506',
+            github: 'https://github.com/nagulan1506/real-estate-app',
         },
         {
             id: 2,
