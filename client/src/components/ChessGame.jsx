@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Chess } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
 import useScrollAnimation from '../hooks/useScrollAnimation';
@@ -6,25 +6,29 @@ import './ChessGame.css';
 
 const ChessGame = () => {
     const [ref, isVisible] = useScrollAnimation();
-    const [game, setGame] = useState(new Chess());
+    const gameRef = useRef(new Chess());
+    const [fen, setFen] = useState(gameRef.current.fen());
     const [moveHistory, setMoveHistory] = useState([]);
     const [status, setStatus] = useState('Your turn');
 
     function makeAMove(move) {
         try {
+            const game = gameRef.current;
             const result = game.move(move);
             if (result) {
-                setGame(new Chess(game.fen()));
-                setMoveHistory([...moveHistory, result.san]);
+                setFen(game.fen());
+                setMoveHistory(prev => [...prev, result.san]);
                 return result;
             }
         } catch (e) {
+            console.error("Move error:", e);
             return null;
         }
         return null;
     }
 
     function makeRandomMove() {
+        const game = gameRef.current;
         const possibleMoves = game.moves();
         if (game.isGameOver() || game.isDraw() || possibleMoves.length === 0) {
             updateStatus();
@@ -49,6 +53,7 @@ const ChessGame = () => {
     }
 
     function updateStatus() {
+        const game = gameRef.current;
         if (game.isCheckmate()) {
             setStatus(`Checkmate! ${game.turn() === 'w' ? 'Computer' : 'You'} won!`);
         } else if (game.isDraw()) {
@@ -62,11 +67,11 @@ const ChessGame = () => {
 
     useEffect(() => {
         updateStatus();
-    }, [game]);
+    }, [fen]);
 
     function resetGame() {
-        const newGame = new Chess();
-        setGame(newGame);
+        gameRef.current = new Chess();
+        setFen(gameRef.current.fen());
         setMoveHistory([]);
         setStatus('Your turn');
     }
@@ -75,11 +80,11 @@ const ChessGame = () => {
         <section className="chess-section section" id="chess">
             <div className="container">
                 <div className="premium-section-header">
-                    <span className="premium-badge">Technical Lab</span>
-                    <h2 className="premium-section-title">Grandmaster Challenge</h2>
+                    <span className="premium-badge">Zen Corner</span>
+                    <h2 className="premium-section-title">Vibe - Stress free</h2>
                     <p className="premium-section-subtitle">
-                        Test your strategic thinking against my tactical script.
-                        Can you beat the computer?
+                        Take a moment to reset. Focus on the board and let the stress fade away.
+                        <br /><small>(Drag and drop pieces to begin your mindful match)</small>
                     </p>
                 </div>
 
@@ -93,7 +98,7 @@ const ChessGame = () => {
                         </div>
                         <div className="board-wrapper">
                             <Chessboard
-                                position={game.fen()}
+                                position={fen}
                                 onPieceDrop={onDrop}
                                 boardOrientation="white"
                                 customDarkSquareStyle={{ backgroundColor: '#6366F1' }}
@@ -105,7 +110,7 @@ const ChessGame = () => {
                     {/* Stats Side */}
                     <div className="chess-controls">
                         <div className="chess-stats-card glass-card">
-                            <h3>Match Analysis</h3>
+                            <h3>Zen Match Analysis</h3>
                             <div className="move-history">
                                 <h4>Move History</h4>
                                 <div className="moves-list">
@@ -116,14 +121,14 @@ const ChessGame = () => {
                                             </span>
                                         ))
                                     ) : (
-                                        <p className="empty-moves">No moves yet. Start the hunt.</p>
+                                        <p className="empty-moves">Empty board. Infinite possibilities.</p>
                                     )}
                                 </div>
                             </div>
 
                             <div className="game-status-info">
-                                <div className={`game-badge ${game.turn() === 'w' ? 'white' : 'black'}`}>
-                                    {game.turn() === 'w' ? 'White to move' : 'Black Thinking...'}
+                                <div className={`game-badge ${gameRef.current.turn() === 'w' ? 'white' : 'black'}`}>
+                                    {gameRef.current.turn() === 'w' ? 'White to move' : 'Thinking...'}
                                 </div>
                             </div>
 
@@ -133,7 +138,7 @@ const ChessGame = () => {
                                     <path d="M1 20v-6h6"></path>
                                     <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
                                 </svg>
-                                Restart Match
+                                New Session
                             </button>
                         </div>
                     </div>
