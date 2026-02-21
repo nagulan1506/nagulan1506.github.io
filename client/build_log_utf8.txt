@@ -1,0 +1,102 @@
+﻿
+> client@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 17 modules transformed.
+node.exe : 
+[31mΓ£ù[39m Build 
+failed in 248ms
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: ([31mΓ£   
+ ù[39m Build fai    
+led in 248ms:Str    
+ing) [], RemoteE    
+xception
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+[31merror during 
+build:
+[31m[vite:esbuild] 
+Transform failed 
+with 1 error:
+C:/guvi/portfolio/cli
+ent/src/components/Pr
+ojects.jsx:114:13: 
+ERROR: Expected 
+identifier but found 
+"/"[31m
+file: [36mC:/guvi/po
+rtfolio/client/src/co
+mponents/Projects.jsx
+:114:13[31m
+[33m
+[33mExpected 
+identifier but found 
+"/"[33m
+112 |      );
+113 |  };
+114 |              
+</div >
+    |               ^
+115 |          
+</section >
+116 |      );
+[31m
+    at 
+failureErrorWithLog (
+C:\guvi\portfolio\cli
+ent\node_modules\esbu
+ild\lib\main.js:1467:
+15)
+    at C:\guvi\portfo
+lio\client\node_modul
+es\esbuild\lib\main.j
+s:736:50
+    at responseCallba
+cks.<computed> (C:\gu
+vi\portfolio\client\n
+ode_modules\esbuild\l
+ib\main.js:603:9)
+    at 
+handleIncomingPacket 
+(C:\guvi\portfolio\cl
+ient\node_modules\esb
+uild\lib\main.js:658:
+12)
+    at Socket.readFro
+mStdout (C:\guvi\port
+folio\client\node_mod
+ules\esbuild\lib\main
+.js:581:7)
+    at Socket.emit 
+(node:events:508:28)
+    at addChunk (node
+:internal/streams/rea
+dable:559:12)
+    at readableAddChu
+nkPushByteMode (node:
+internal/streams/read
+able:510:3)
+    at Readable.push 
+(node:internal/stream
+s/readable:390:5)
+    at 
+Pipe.onStreamRead (no
+de:internal/stream_ba
+se_commons:189:23)[3
+9m
