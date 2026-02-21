@@ -114,7 +114,19 @@
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-emoji {
+    display: inline-block;
+    animation: float-icon 3s ease-in-out infinite;
+    animation-delay: inherit;
+}
+
+.premium-skill-card:hover .skill-emoji {
+    animation: skill-pulse 0.6s cubic-bezier(0.16, 1, 0.3, 1) infinite alternate;
 }
 
 .premium-skill-card:hover .skill-icon-box {
@@ -198,5 +210,30 @@
 @media (max-width: 576px) {
     .skills-premium-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+@keyframes float-icon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes skill-pulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 var(--skill-color));
+    }
+
+    100% {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 12px var(--skill-color));
     }
 }

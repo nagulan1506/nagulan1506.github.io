@@ -24,6 +24,7 @@ const Education = () => {
             year: '2025',
             icon: '📜',
             gradient: 'linear-gradient(135deg, #7b2ff7, #ff2d95)',
+            link: 'https://v2.zenclass.in/certificateDownload/YtR1RUhX0ISo2nhv'
         },
     ];
 
@@ -55,7 +56,13 @@ const Education = () => {
                                     }}>
                                         {item.type === 'education' ? 'Education' : 'Certification'}
                                     </span>
-                                    <h3 className="timeline-title">{item.title}</h3>
+                                    {item.link ? (
+                                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="timeline-link">
+                                            <h3 className="timeline-title">{item.title} <span className="link-icon">🔗</span></h3>
+                                        </a>
+                                    ) : (
+                                        <h3 className="timeline-title">{item.title}</h3>
+                                    )}
                                     <p className="timeline-institution">{item.institution}</p>
                                     <p className="timeline-field">{item.field}</p>
                                     <div className="timeline-meta">

@@ -64,7 +64,7 @@ const Contact = () => {
                             </div>
                             <div className="quick-item">
                                 <span className="quick-label">Current Location</span>
-                                <span className="quick-value">Salem, TN, India</span>
+                                <span className="quick-value">Chennai, TN, India</span>
                             </div>
                         </div>
                     </div>

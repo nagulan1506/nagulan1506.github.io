@@ -110,6 +110,28 @@
     color: var(--text-muted);
 }
 
+.timeline-link {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.timeline-link:hover .timeline-title {
+    color: var(--accent-emerald);
+    transform: translateX(5px);
+}
+
+.link-icon {
+    font-size: 1rem;
+    margin-left: 8px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-link:hover .link-icon {
+    opacity: 1;
+}
+
 .timeline-location,
 .timeline-year {
     display: flex;
