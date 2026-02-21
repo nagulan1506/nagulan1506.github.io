@@ -12,8 +12,8 @@
 
 .doodle {
     position: absolute;
-    opacity: 0.06;
-    color: var(--accent-blue);
+    opacity: 0.08;
+    color: var(--accent-purple);
     animation: float 8s ease-in-out infinite;
 }
 
@@ -21,16 +21,16 @@
     top: 8%;
     left: 5%;
     animation-delay: 0s;
-    color: var(--accent-blue);
-    opacity: 0.08;
+    color: #6366F1;
+    opacity: 0.1;
 }
 
 .doodle-2 {
     top: 15%;
     right: 8%;
     animation-delay: 1.5s;
-    color: #61dafb;
-    opacity: 0.07;
+    color: #3B82F6;
+    opacity: 0.08;
     animation-duration: 12s;
 }
 
@@ -38,51 +38,50 @@
     top: 35%;
     left: 3%;
     animation-delay: 3s;
-    color: var(--accent-purple);
-    opacity: 0.06;
+    color: #A78BFA;
+    opacity: 0.07;
 }
 
 .doodle-4 {
     top: 45%;
     right: 5%;
     animation-delay: 2s;
-    color: #f05032;
-    opacity: 0.06;
+    color: #6366F1;
+    opacity: 0.07;
 }
 
 .doodle-5 {
     top: 60%;
     left: 8%;
     animation-delay: 4s;
-    color: var(--accent-cyan);
-    opacity: 0.07;
+    color: #3B82F6;
+    opacity: 0.09;
 }
 
 .doodle-6 {
     top: 70%;
     right: 10%;
     animation-delay: 1s;
-    color: var(--accent-blue);
-    opacity: 0.05;
+    color: #6366F1;
+    opacity: 0.06;
 }
 
 .doodle-7 {
     top: 82%;
     left: 12%;
     animation-delay: 5s;
-    color: var(--accent-gold);
-    opacity: 0.06;
+    color: #F59E0B;
+    opacity: 0.07;
 }
 
 .doodle-8 {
     top: 25%;
     left: 85%;
     animation-delay: 2.5s;
-    color: var(--accent-blue);
-    opacity: 0.05;
+    color: #3B82F6;
+    opacity: 0.06;
 }
 
-/* Text doodles */
 .doodle-text {
     font-family: 'Space Grotesk', monospace;
     font-weight: 700;
@@ -94,8 +93,8 @@
     top: 20%;
     left: 92%;
     animation-delay: 3.5s;
-    color: var(--accent-purple);
-    opacity: 0.08;
+    color: #A78BFA;
+    opacity: 0.1;
     font-size: 1rem;
 }
 
@@ -103,8 +102,8 @@
     top: 50%;
     left: 1%;
     animation-delay: 6s;
-    color: var(--accent-blue);
-    opacity: 0.07;
+    color: #6366F1;
+    opacity: 0.09;
     font-size: 1.4rem;
 }
 
@@ -112,22 +111,22 @@
     top: 75%;
     right: 3%;
     animation-delay: 4.5s;
-    color: #cb3837;
-    opacity: 0.06;
+    color: #EF4444;
+    opacity: 0.07;
 }
 
 .doodle-12 {
     top: 90%;
     left: 50%;
     animation-delay: 7s;
-    color: var(--accent-cyan);
-    opacity: 0.08;
+    color: #3B82F6;
+    opacity: 0.1;
     font-size: 1.3rem;
 }
 
 @media (max-width: 768px) {
     .doodle {
-        opacity: 0.04;
+        opacity: 0.05;
         transform: scale(0.7);
     }
 }
