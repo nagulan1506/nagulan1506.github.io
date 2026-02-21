@@ -7,56 +7,56 @@ const Skills = () => {
     const skills = [
         {
             name: 'JavaScript',
-            level: 85,
+            level: 92,
             icon: '⚡',
             color: '#f7df1e',
             category: 'Language'
         },
         {
             name: 'React',
-            level: 88,
+            level: 94,
             icon: '⚛️',
             color: '#61dafb',
             category: 'Frontend'
         },
         {
             name: 'Node.js',
-            level: 82,
+            level: 88,
             icon: '🟢',
             color: '#68a063',
             category: 'Backend'
         },
         {
             name: 'MongoDB',
-            level: 80,
+            level: 86,
             icon: '🍃',
             color: '#4db33d',
             category: 'Database'
         },
         {
             name: 'Redux',
-            level: 75,
+            level: 85,
             icon: '🔄',
             color: '#764abc',
             category: 'State'
         },
         {
             name: 'TailwindCSS',
-            level: 85,
+            level: 90,
             icon: '🎨',
             color: '#38bdf8',
             category: 'Styling'
         },
         {
             name: 'HTML/CSS',
-            level: 90,
+            level: 95,
             icon: '🌐',
             color: '#e34f26',
             category: 'Frontend'
         },
         {
             name: 'MySQL',
-            level: 70,
+            level: 87,
             icon: '🗄️',
             color: '#00758f',
             category: 'Database'
