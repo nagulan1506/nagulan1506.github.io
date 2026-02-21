@@ -115,25 +115,27 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    {/* Profile Photo */}
-                    <div className="hero-photo-wrapper">
-                        <div className="hero-photo-glow"></div>
-                        <div className="hero-photo-ring">
-                            <img src="/profile.jpg" alt="NAGULAN SARAVANAN" className="hero-photo" />
+                    {/* Profile Photo & Kural Column */}
+                    <div className="hero-photo-column">
+                        <div className="hero-photo-wrapper">
+                            <div className="hero-photo-glow"></div>
+                            <div className="hero-photo-ring">
+                                <img src="/profile.jpg" alt="NAGULAN SARAVANAN" className="hero-photo" />
+                            </div>
+                            <div className="hero-photo-accent"></div>
+                        </div>
 
-                            {/* Thirukkural Hover Overlay */}
-                            <div className="kural-overlay">
-                                <div className="kural-content">
-                                    <span className="kural-number">குறள் 355</span>
-                                    <p className="kural-text">
-                                        ஒழுக்கம் விழுப்பம் தரலான் ஒழுக்கம்<br />
-                                        உயிரினும் ஓம்பப் படும்.
-                                    </p>
-                                    <span className="kural-author">- திருவள்ளுவர்</span>
-                                </div>
+                        {/* Thirukkural Elegant Card */}
+                        <div className="kural-card glass-card">
+                            <div className="kural-content">
+                                <span className="kural-number">குறள் 355</span>
+                                <p className="kural-text">
+                                    ஒழுக்கம் விழுப்பம் தரலான் ஒழுக்கம்<br />
+                                    உயிரினும் ஓம்பப் படும்.
+                                </p>
+                                <span className="kural-author">- திருவள்ளுவர்</span>
                             </div>
                         </div>
-                        <div className="hero-photo-accent"></div>
                     </div>
                 </div>
 
